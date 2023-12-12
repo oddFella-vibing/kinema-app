@@ -1,0 +1,46 @@
+<div class="movie-container" *ngIf="movie_data">
+  <div class="movie-container-inner">
+    <div class="posterbg">
+      <img
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie_data.backdrop_path"
+        alt="movie backdrop"
+        class="backdrop"
+      />
+
+      <div class="movie-title">
+        <img
+          [src]="'http://image.tmdb.org/t/p/w500/' + movie_data.poster_path"
+          alt="poster"
+          class="poster"
+        />
+        <h1>
+          <b>{{ movie_data.title }}</b>
+        </h1>
+        <p>release date : {{ movie_data.release_date }}</p>
+      </div>
+    </div>
+    <div class="overview">
+      <div class="details">
+        <div class="quote">
+          "<i>{{ movie_data.tagline }}</i
+          >"
+        </div>
+        <div class="genre">
+          <button type="menu" disabled *ngFor="let genere of movie_data.genres">
+            {{ genere.name }}
+          </button>
+        </div>
+
+        <div class="second-details">
+          <p>Original Title : {{ movie_data.original_title }}</p>
+          <p>Popularity Score : {{ movie_data.popularity }}</p>
+        </div>
+      </div>
+
+      <p class="overview">{{ movie_data.overview }} <a [href]="movie_data.homepage"><i>go to official homepage.</i></a></p>
+     
+    </div>
+  </div>
+</div>
+
+

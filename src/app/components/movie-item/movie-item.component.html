@@ -1,0 +1,11 @@
+<div class="card">
+  <img
+    [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+    alt="movie-poster"
+    class="card-img img-thumbnail"
+  />
+  <div class="card-footer">
+    <h5 >{{ movie.title }}</h5>
+    <small style="opacity: 0.5;color: red;">popularity score : {{ movie.popularity }}</small>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+.not-container {
+
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+}
+.movie-list-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.card {
+}

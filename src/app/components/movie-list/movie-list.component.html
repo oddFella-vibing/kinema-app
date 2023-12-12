@@ -1,0 +1,13 @@
+<div class="not-container">
+  <div class="movie-list-container">
+    <app-movie-item
+      *ngFor="let movie of movieList"
+      [movie]="{
+        title: movie.title,
+        popularity: movie.popularity,
+        poster_path: movie.poster_path
+      }"
+      [routerLink]="['movie-detail', movie.id]"
+    ></app-movie-item>
+  </div>
+</div>
