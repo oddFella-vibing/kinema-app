@@ -18,7 +18,7 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit(): void {
     this.movie_id = this.activatedRoute.snapshot.params['id'];
     this.movieapiService.getMovie(this.movie_id).subscribe((res: any) => {
-      console.log(res);
+      console.log(res.credits.cast[0]);
       this.movie_data = {
         title: res.title,
         adult: res.adult,
@@ -33,6 +33,7 @@ export class MovieDetailComponent implements OnInit {
         tagline: res.tagline,
         runtime: res.tagline,
         homepage: res.homepage,
+        cast:res.credits.cast
       };
     });
   }

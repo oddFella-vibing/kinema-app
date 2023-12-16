@@ -2,7 +2,7 @@
   <div class="movie-container-inner">
     <div class="posterbg">
       <img
-        [src]="'http://image.tmdb.org/t/p/w500/' + movie_data.backdrop_path"
+        [src]="'http://image.tmdb.org/t/p/original/' + movie_data.backdrop_path"
         alt="movie backdrop"
         class="backdrop"
       />
@@ -37,10 +37,24 @@
         </div>
       </div>
 
-      <p class="overview">{{ movie_data.overview }} <a [href]="movie_data.homepage"><i>go to official homepage.</i></a></p>
-     
+      <p class="overview-P">
+        {{ movie_data.overview }}
+        <a [href]="movie_data.homepage"><i>go to official homepage.</i></a>
+      </p>
+    </div>
+    <h5 class="px-2">TOP BILLED CAST :</h5>
+    <div class="credits-container">
+      <div
+        class="credits-container-inner"
+        *ngFor="let cast of movie_data.cast.slice(0, 5)"
+      >
+        <img
+          [src]="'http://image.tmdb.org/t/p/original' + cast.profile_path"
+          alt="profile"
+        />
+        <h6>{{ cast.name }}</h6>
+      </div>
     </div>
   </div>
+  
 </div>
-
-

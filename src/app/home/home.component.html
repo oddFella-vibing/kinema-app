@@ -1,0 +1,36 @@
+<div class="home-container">
+  <div class="tools">
+    <div class="search-box">
+      <button class="btn-search" (click)="onSearch()">
+        <fa-icon [icon]="faSearch" size="xs"></fa-icon>
+      </button>
+      <input
+        type="text"
+        class="input-search"
+        placeholder="Type to Search..."
+        [(ngModel)]="searchInput"
+        (ngModelChange)="onClear()"
+      />
+    </div>
+  </div>
+ 
+
+    <div *ngIf="search_boolean">
+      <p class="text-white px-3">
+        movies with "{{ searchInput }}" in the title
+      </p>
+      <app-movie-list
+        *ngIf="searchItems !== []"
+        [movieList]="searchItems"
+      ></app-movie-list>
+    </div>
+    <h3 class="text-white px-3">POPULAR</h3>
+    <app-movie-list [movieList]="popular_movie_list"></app-movie-list>
+    <h3 class="text-white px-3">TOP RATED</h3>
+    <app-movie-list [movieList]="toprated_movie_list"></app-movie-list>
+    <h3 class="text-white px-3">NOW PLAYING</h3>
+    <app-movie-list [movieList]="now_playing_movie_list"></app-movie-list>
+    <h3 class="text-white px-3">UPCOMING</h3>
+    <app-movie-list [movieList]="upcoming_movie_list"></app-movie-list>
+  </div>
+

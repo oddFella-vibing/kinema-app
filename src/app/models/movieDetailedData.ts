@@ -17,4 +17,10 @@ export interface MovieDetaiedData {
   tagline: string;
   runtime: number;
   homepage: string;
+  cast: [
+    {
+      name: string;
+      profile_path: string;
+    }
+  ];
 }

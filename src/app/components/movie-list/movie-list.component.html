@@ -1,13 +1,15 @@
 <div class="not-container">
   <div class="movie-list-container">
     <app-movie-item
-      *ngFor="let movie of movieList"
+      class="tile"
+      *ngFor="let movie of movieList; let i = index"
       [movie]="{
         title: movie.title,
         popularity: movie.popularity,
         poster_path: movie.poster_path
       }"
       [routerLink]="['movie-detail', movie.id]"
+      [ngClass]="{ active: i === 1 }"
     ></app-movie-item>
   </div>
 </div>
